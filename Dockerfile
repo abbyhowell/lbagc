@@ -1,74 +1,67 @@
 # #####################################################################
-# # Stage 1: Install gems and precompile assets.
+# Stage 1: Install gems and precompile assets.
 # #####################################################################
 FROM ruby:3.3-slim AS build
 WORKDIR /app
 
-# Set a random secret key base so we can precompile assets.
-ENV SECRET_KEY_BASE airport_gap_secret_key_base
-
-# Install necessary dependencies to set up Node.js and Yarn repos.
+# Base build deps (include ca-certificates so curl TLS is happy)
 RUN apt-get update && \
   apt-get install -y --no-install-recommends \
-  curl \
-  gnupg \
-  build-essential \
-  libpq-dev \
-  libyaml-dev \
-  libsqlite3-dev && \
+    curl \
+    ca-certificates \
+    gnupg \
+    build-essential \
+    libpq-dev \
+    libyaml-dev \
+    libsqlite3-dev && \
   rm -rf /var/lib/apt/lists/*
 
-# Set up Node.js and Yarn package repositories.
-RUN curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | gpg --dearmor -o /usr/share/keyrings/nodesource.gpg
-RUN echo "deb [signed-by=/usr/share/keyrings/nodesource.gpg] https://deb.nodesource.com/node_20.x nodistro main" > /etc/apt/sources.list.d/nodesource.list
-RUN curl -fsSL https://dl.yarnpkg.com/debian/pubkey.gpg | gpg --dearmor -o /usr/share/keyrings/yarnkey.gpg
-RUN echo "deb [signed-by=/usr/share/keyrings/yarnkey.gpg] https://dl.yarnpkg.com/debian stable main" > /etc/apt/sources.list.d/yarn.list
+# Node 20 repo (NodeSource)
+RUN curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | gpg --dearmor -o /usr/share/keyrings/nodesource.gpg && \
+  echo "deb [signed-by=/usr/share/keyrings/nodesource.gpg] https://deb.nodesource.com/node_20.x nodistro main" > /etc/apt/sources.list.d/nodesource.list
 
-# Install necessary packages to build gems and assets.
+# Install Node (and use Corepack for Yarn instead of Yarn APT repo)
 RUN apt-get update && \
-  apt-get install -y --no-install-recommends \
-  nodejs \
-  yarn && \
-  rm -rf /var/lib/apt/lists/*
+  apt-get install -y --no-install-recommends nodejs && \
+  rm -rf /var/lib/apt/lists/* && \
+  corepack enable
 
-# Install gems into the vendor/bundle directory in the workspace.
+# If your project expects classic Yarn (v1), keep this:
+RUN corepack prepare yarn@1.22.22 --activate
+# If it expects modern Yarn (berry), swap to something like:
+# RUN corepack prepare yarn@4.5.3 --activate
+
+# Install gems into vendor/bundle
 COPY Gemfile Gemfile.lock /app/
 RUN bundle config set --local path "vendor/bundle" && \
   bundle install --jobs 4 --retry 3
 
-# Install JavaScript dependencies to precompile assets.
+# If you actually need JS deps for assets, uncomment these:
 # COPY package.json yarn.lock /app/
-# RUN yarn install
+# RUN yarn install --frozen-lockfile
 
-# Precompile app assets as the final step.
+# Copy app and precompile assets (SECRET_KEY_BASE only for this command)
 COPY . /app/
-RUN bin/rails assets:precompile
+RUN SECRET_KEY_BASE=dummy_precompile_secret bin/rails assets:precompile
 RUN chown -R www-data:www-data /app
 
-#####################################################################
-# Stage 2: Copy gems and assets from build stage and finalize image.
-#####################################################################
+# #####################################################################
+# Stage 2: Runtime
+# #####################################################################
 FROM ruby:3.3-slim
 WORKDIR /app
 
-# Install necessary dependencies required to run the Rails application.
 RUN apt-get update && \
   apt-get install -y --no-install-recommends \
-  libpq-dev \
-  libsqlite3-0 \
-  curl && \
+    libpq5 \
+    libsqlite3-0 \
+    ca-certificates && \
   rm -rf /var/lib/apt/lists/*
-
-# Make sure Bundler knows where we're placing our gems coming from
-# the build stage.
 
 RUN bundle config set --local path "vendor/bundle"
 
-# switch user
 USER www-data:www-data
-
-# Copy everything from the build stage, including gems and precompiled assets.
 COPY --from=build /app /app/
 
 EXPOSE 3000
-CMD ["bundle", "exec", "rails", "s", "-p", "3000"]
+CMD ["bundle", "exec", "rails", "s", "-p", "3000", "-b", "0.0.0.0"]
