@@ -83,7 +83,7 @@ class Admins::GrantSubmissionsController < ApplicationController
             tags = gs.tags(true).join(",")
             funding = gs.granted_funding_dollars || 0
             artist = Artist.where(id: gs.artist_id).take
-            url = "https://grants.fireflyartscollective.org/grant_submissions/#{gs.id}"
+            url = "https://grants.lunaburn.org/grant_submissions/#{gs.id}"
             csv << [grant.name, gs.name, tags, artist.name, funding, url,
                     artist.contact_name, artist.email, "", "", "",
                     artist.contact_street, artist.contact_city,

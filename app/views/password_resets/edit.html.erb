@@ -1,13 +1,13 @@
 <% provide(:title, 'Reset password') %>
 
-<h1><%= link_to "Firefly Art Grants", :controller => "home", :action => "index" %>: Reset password</h1>
+<h1><%= link_to "Luna Burn Art Grants", :controller => "home", :action => "index" %>: Reset password</h1>
 
 <% if flash.any? %>
   <% flash.each do |name, msg| -%>
     <%= content_tag :div, msg, class: name %>
   <% end -%>
   <br />
-  For help please contact us at: <a href="mailto:grants@fireflyartscollective.org">grants@fireflyartscollective.org</a>
+  For help please contact us at: <a href="mailto:grants@lunaburn.org">grants@lunaburn.org</a>
   <br /><br />
 <% end %>
 

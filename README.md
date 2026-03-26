@@ -1,4 +1,4 @@
-# Firefly Art Grant Core Website [![CircleCI](https://circleci.com/gh/FireflyArtsCollective/ffagc.svg?style=svg)](https://circleci.com/gh/FireflyArtsCollective/ffagc)
+# Luna Burn Art Grant Core Website [![CircleCI](https://circleci.com/gh/abbyhowell/lbagc.svg?style=svg)](https://circleci.com/gh/abbyhowell/lbagc)
 
 ## Initial Environment Setup
 
@@ -22,7 +22,7 @@ There are a few changes to make every year:
 
 * Upgrade gems: bundle3.0 install && bundle3.0 update
 
-* Set the year of the event (e.g., "Apply for Firefly 2027!") in config/application.rb.
+* Set the year of the event (e.g., "Apply for Luna Burn 2027!") in config/application.rb.
 
 * Check the grant contract templates in lib/contract_templates. Each grant has a template name that must match a contract filename on disk.
 

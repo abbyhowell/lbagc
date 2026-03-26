@@ -108,7 +108,7 @@ class GrantContract < Prawn::Document
         move_down 40
         stroke_horizontal_rule
         move_down 5
-        text "Firefly Arts Collective Representative"
+        text "Luna Burn Representative"
       end
 
       bounding_box([300, cursor], :width => 200, :height => cursor) do
