@@ -1,6 +1,6 @@
 services:
   app:
-    image: ghcr.io/fireflyartscollective/ffagc:main
+    image: ghcr.io/abbyhowell/lbagc:main
     restart: unless-stopped
     volumes:
       - /var/www/ffagc/.env:/app/.env

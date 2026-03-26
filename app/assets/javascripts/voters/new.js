@@ -1,8 +1,8 @@
 function validate()
 {
     var found_error = false;
-    if(!$('#voter_voter_survey_attributes_has_attended_firefly').is(':checked')){
-      alert("You must have attended firefly at least once to be on the voting committee.");
+    if(!$('#voter_voter_survey_attributes_has_attended_luna_burn').is(':checked')){
+      alert("You must have attended Luna Burn at least once to be on the voting committee.");
       found_error = true;
     }
     if(!$('#voter_voter_survey_attributes_not_applying_this_year').is(':checked')){

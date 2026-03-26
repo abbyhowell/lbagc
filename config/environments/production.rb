@@ -127,7 +127,7 @@ Rails.application.configure do
   config.action_mailer.perform_deliveries = true
 
   # This is the hostname that will be used in links inside emails
-  config.action_mailer.default_url_options = { :host => 'grants.fireflyartscollective.org' }
+  config.action_mailer.default_url_options = { :host => 'grants.lunaburn.org' }
 
   config.action_mailer.delivery_method = :smtp
 

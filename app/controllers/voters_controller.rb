@@ -142,7 +142,7 @@ class VotersController < ApplicationController
 
   def voter_survey_attributes
     [
-      :has_attended_firefly,
+      :has_attended_luna_burn,
       :not_applying_this_year,
       :will_read,
       :will_meet,
@@ -150,7 +150,7 @@ class VotersController < ApplicationController
       :has_participated_other,
       :has_received_grant,
       :has_received_other_grant,
-      :how_many_fireflies,
+      :how_many_luna_burns,
       :signed_agreement
     ]
   end

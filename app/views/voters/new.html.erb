@@ -27,10 +27,10 @@
       </div>
       <div class="panel-body">
         <div class="checkbox"><abbr title="required">*</abbr>
-          <label><%= f_voter_survey.check_box :has_attended_firefly %>I have attended at least one previous Firefly</label>
+          <label><%= f_voter_survey.check_box :has_attended_luna_burn %>I have attended at least one previous Luna Burn</label>
         </div>
         <div class="checkbox"><abbr title="required">*</abbr>
-          <label><%= f_voter_survey.check_box :not_applying_this_year %>I am NOT applying for a Firefly Art Grant in <%= event_year %></label>
+          <label><%= f_voter_survey.check_box :not_applying_this_year %>I am NOT applying for a Luna Burn Art Grant in <%= event_year %></label>
         </div>
         <div class="checkbox"><abbr title="required">*</abbr>
           <label><%= f_voter_survey.check_box :will_read %>I commit to reading and considering > 35 applications (~4-6 hours of brain time)</label>
@@ -38,8 +38,8 @@
         <div class="checkbox"><abbr title="required">*</abbr>
           <label><%= f_voter_survey.check_box :signed_agreement %>
             <strong>I have read and agree to abide by the
-            <a href="https://www.fireflyartscollective.org/wp-content/uploads/2017/01/FireflyArtGrantCommitteeCodeofEthics.pdf">
-              Firefly Art Grant Code of Ethics</a>.
+            <a href="https://www.lunaburn.org/wp-content/uploads/2017/01/LunaBurnArtGrantCommitteeCodeofEthics.pdf">
+              Luna Burn Art Grant Code of Ethics</a>.
           </strong></label>
         </div>
 
@@ -68,11 +68,11 @@
         <h3 class="panel-title">Optional Survey</h3>
       </div>
       <div class="panel-body">
-        <%= f_voter_survey.input :has_been_voter, as: :radio_buttons, label: 'I have been a member of the Firefly art grant voting committee in previous years' %>
+        <%= f_voter_survey.input :has_been_voter, as: :radio_buttons, label: 'I have been a member of the Luna Burn art grant voting committee in previous years' %>
         <%= f_voter_survey.input :has_participated_other, as: :radio_buttons, label: 'I have been on art grant voting/judging committees for other institutions' %>
-        <%= f_voter_survey.input :has_received_grant, as: :radio_buttons, label: 'I have been awarded a Firefly art grant in previous years' %>
+        <%= f_voter_survey.input :has_received_grant, as: :radio_buttons, label: 'I have been awarded a Luna Burn art grant in previous years' %>
         <%= f_voter_survey.input :has_received_other_grant, as: :radio_buttons, label: 'I have been awarded art grants from other institutions' %>
-        <%= f_voter_survey.input :how_many_fireflies, label: 'How many Fireflies have you attended?', as: :integer, input_html: { min: '0' } %>
+        <%= f_voter_survey.input :how_many_luna_burns, label: 'How many Luna Burns have you attended?', as: :integer, input_html: { min: '0' } %>
       </div>
     </div>
   <% end %>

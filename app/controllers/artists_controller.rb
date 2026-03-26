@@ -44,7 +44,7 @@ class ArtistsController < ApplicationController
 
   def artist_survey_attributes
     [
-      :has_attended_firefly, :has_attended_firefly_desc,
+      :has_attended_luna_burn, :has_attended_luna_burn_desc,
       :has_attended_regional, :has_attended_regional_desc,
       :has_attended_bm, :has_attended_bm_desc,
       :can_use_as_example

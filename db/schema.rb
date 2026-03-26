@@ -53,8 +53,8 @@ ActiveRecord::Schema[8.0].define(version: 2021_12_13_155334) do
   end
 
   create_table "artist_surveys", force: :cascade do |t|
-    t.boolean "has_attended_firefly"
-    t.string "has_attended_firefly_desc"
+    t.boolean "has_attended_luna_burn"
+    t.string "has_attended_luna_burn_desc"
     t.boolean "has_attended_regional"
     t.string "has_attended_regional_desc"
     t.boolean "has_attended_bm"
@@ -160,7 +160,7 @@ ActiveRecord::Schema[8.0].define(version: 2021_12_13_155334) do
   end
 
   create_table "voter_surveys", force: :cascade do |t|
-    t.boolean "has_attended_firefly"
+    t.boolean "has_attended_luna_burn"
     t.boolean "not_applying_this_year"
     t.boolean "will_read"
     t.boolean "will_meet"
@@ -168,7 +168,7 @@ ActiveRecord::Schema[8.0].define(version: 2021_12_13_155334) do
     t.boolean "has_participated_other"
     t.boolean "has_received_grant"
     t.boolean "has_received_other_grant"
-    t.integer "how_many_fireflies"
+    t.integer "how_many_luna_burns"
     t.datetime "created_at", precision: nil
     t.datetime "updated_at", precision: nil
     t.integer "voter_id"

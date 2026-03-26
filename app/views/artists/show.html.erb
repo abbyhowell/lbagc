@@ -11,9 +11,9 @@
       </div>
       <div class="panel-body">
         <% if @artist.artist_survey.present? %>
-          <p>Has attended firefly? <% if @artist.artist_survey.has_attended_firefly %>Yes<% else %>No<%end%></p>
-          <% if @artist.artist_survey.has_attended_firefly_desc.present? %>
-          <blockquote><%= @artist.artist_survey.has_attended_firefly_desc %></blockquote>
+          <p>Has attended Luna Burn? <% if @artist.artist_survey.has_attended_luna_burn %>Yes<% else %>No<%end%></p>
+          <% if @artist.artist_survey.has_attended_luna_burn_desc.present? %>
+          <blockquote><%= @artist.artist_survey.has_attended_luna_burn_desc %></blockquote>
           <% end %>
 
           <p>Has attended a regional? <% if @artist.artist_survey.has_attended_regional %>Yes<% else %>No<%end%></p>

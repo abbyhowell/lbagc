@@ -8,8 +8,8 @@ describe UserMailer do
 
     subject { UserMailer.account_activation('artists', artist) }
 
-    its(:subject) { is_expected.to eq('Firefly Art Grant Account Activation') }
-    its(:from) { is_expected.to include('grants@fireflyartscollective.org') }
+    its(:subject) { is_expected.to eq('Luna Burn Art Grant Account Activation') }
+    its(:from) { is_expected.to include('grants@lunaburn.org') }
     its(:to) { is_expected.to eq([artist.email]) }
 
     it do
@@ -26,8 +26,8 @@ describe UserMailer do
 
     subject { UserMailer.password_reset('artists', artist) }
 
-    its(:subject) { is_expected.to eq('Firefly Art Grant Password Reset') }
-    its(:from) { is_expected.to include('grants@fireflyartscollective.org') }
+    its(:subject) { is_expected.to eq('Luna Burn Art Grant Password Reset') }
+    its(:from) { is_expected.to include('grants@lunaburn.org') }
     its(:to) { is_expected.to eq([artist.email]) }
 
     it do
@@ -47,8 +47,8 @@ describe UserMailer do
 
       subject { UserMailer.grant_funded(grant_submission, artist, grant, '2020') }
 
-      its(:subject) { is_expected.to eq("2020 Firefly Creativity Grant Decision: #{grant_submission.name}") }
-      its(:from) { is_expected.to include('grants@fireflyartscollective.org') }
+      its(:subject) { is_expected.to eq("2020 Luna Burn Creativity Grant Decision: #{grant_submission.name}") }
+      its(:from) { is_expected.to include('grants@lunaburn.org') }
       its(:to) { is_expected.to eq([artist.email]) }
 
       it do
@@ -65,8 +65,8 @@ describe UserMailer do
 
       subject { UserMailer.grant_funded(grant_submission, artist, grant, '2020') }
 
-      its(:subject) { is_expected.to eq("2020 Firefly Creativity Grant Decision: #{grant_submission.name}") }
-      its(:from) { is_expected.to include('grants@fireflyartscollective.org') }
+      its(:subject) { is_expected.to eq("2020 Luna Burn Creativity Grant Decision: #{grant_submission.name}") }
+      its(:from) { is_expected.to include('grants@lunaburn.org') }
       its(:to) { is_expected.to eq([artist.email]) }
 
       it do
@@ -86,8 +86,8 @@ describe UserMailer do
 
       subject { UserMailer.grant_funded(grant_submission, artist, grant, '2020') }
 
-      its(:subject) { is_expected.to eq("2020 Firefly Creativity Grant Decision: #{grant_submission.name}") }
-      its(:from) { is_expected.to include('grants@fireflyartscollective.org') }
+      its(:subject) { is_expected.to eq("2020 Luna Burn Creativity Grant Decision: #{grant_submission.name}") }
+      its(:from) { is_expected.to include('grants@lunaburn.org') }
       its(:to) { is_expected.to eq([artist.email]) }
 
       it do
@@ -110,8 +110,8 @@ describe UserMailer do
 
       subject { UserMailer.grant_not_funded(grant_submission, artist, grant, '2020') }
 
-      its(:subject) { is_expected.to eq("2020 Firefly Creativity Grant Decision: #{grant_submission.name}") }
-      its(:from) { is_expected.to include('grants@fireflyartscollective.org') }
+      its(:subject) { is_expected.to eq("2020 Luna Burn Creativity Grant Decision: #{grant_submission.name}") }
+      its(:from) { is_expected.to include('grants@lunaburn.org') }
       its(:to) { is_expected.to eq([artist.email]) }
 
       it do
@@ -128,8 +128,8 @@ describe UserMailer do
 
       subject { UserMailer.grant_not_funded(grant_submission, artist, grant, '2020') }
 
-      its(:subject) { is_expected.to eq("2020 Firefly Creativity Grant Decision: #{grant_submission.name}") }
-      its(:from) { is_expected.to include('grants@fireflyartscollective.org') }
+      its(:subject) { is_expected.to eq("2020 Luna Burn Creativity Grant Decision: #{grant_submission.name}") }
+      its(:from) { is_expected.to include('grants@lunaburn.org') }
       its(:to) { is_expected.to eq([artist.email]) }
 
       it do

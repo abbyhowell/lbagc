@@ -11,49 +11,49 @@ Temple:
   schedule: ["Sunday, Feb 22, 2026: Submissions Due",
              "Sunday, March 8, 2026: Signed Contracts Due",
              "Friday, March 20, 2026: Check cut and sent",
-             "Tuesday, June 30 - Sunday, July 5, 2026: Firefly!"]
+             "Tuesday, June 30 - Sunday, July 5, 2026: Luna Burn!"]
 Creativity:
   contract_deadline: "Sunday, March 22, 2026"
   schedule: ["Sunday, March 8, 2026: Submissions Due",
              "Sunday, March 22, 2026: Signed Contracts Due",
              "Sunday, March 29, 2026: First check cut and sent",
-             "Tuesday, June 30 - Sunday, July 5, 2026: Firefly!",
-             "Friday, July 24, 2026: Firefly documentation due",
+             "Tuesday, June 30 - Sunday, July 5, 2026: Luna Burn!",
+             "Friday, July 24, 2026: Luna Burn documentation due",
              "Friday, July 31, 2026: Second check cut and sent"]
 Creativity Round 2:
   contract_deadline: "Sunday, April 26, 2026"
   schedule: ["Sunday, April 12, 2026: Submissions Due",
              "Sunday, April 26, 2026: Signed Contracts Due",
              "Sunday, May 24, 2026: First check cut and sent",
-             "Tuesday, June 30 - Sunday, July 5, 2026: Firefly!",
-             "Friday, July 24, 2026: Firefly documentation due",
+             "Tuesday, June 30 - Sunday, July 5, 2026: Luna Burn!",
+             "Friday, July 24, 2026: Luna Burn documentation due",
              "Friday, July 31, 2026: Second check cut and sent"]
 Legacy:
   contract_deadline: "Sunday, May 17, 2026"
   schedule: ["Sunday, May 3, 2026: Submissions Due",
              "Sunday, May 17, 2026: Signed Contracts Due",
              "Sunday, May 24, 2026: Check cut and sent",
-             "Tuesday, June 30 - Sunday, July 5, 2026: Firefly!"]
+             "Tuesday, June 30 - Sunday, July 5, 2026: Luna Burn!"]
 Burner Exchange:
   contract_deadline: "Sunday, May 17, 2026"
   schedule: ["Sunday, May 3, 2026: Submissions Due",
              "Sunday, May 17, 2026: Signed Contracts Due",
              "Sunday, May 24, 2026: Check cut and sent",
-             "Tuesday, June 30 - Sunday, July 5, 2026: Firefly!"]
+             "Tuesday, June 30 - Sunday, July 5, 2026: Luna Burn!"]
 Moonshot (disabled):
   contract_deadline: "10 days after notification of Grant"
-  schedule: ["Wednesday, June 29 - Monday, July 4, 2022: Firefly!",
-             "Friday, July 22, 2022: Firefly documentation due"]
+  schedule: ["Wednesday, June 29 - Monday, July 4, 2022: Luna Burn!",
+             "Friday, July 22, 2022: Luna Burn documentation due"]
 Skillshare (disabled):
   contract_deadline: "Friday, June 3, 2022"
   schedule: ["Friday, May 14, 2022: Signed Contracts Due",
              "Monday, May 16, 2022: Check cut and sent",
-             "Tuesday, June 30 - Sunday, July 5, 2026: Firefly!"]
+             "Tuesday, June 30 - Sunday, July 5, 2026: Luna Burn!"]
 TEST GRANT:
   contract_deadline: "Sunday, March 29, 2026"
   schedule: ["Sunday, March 8, 2026: Submissions Due",
              "Sunday, March 29, 2026: Signed Contracts Due",
              "Sunday, April 5, 2026: First check cut and sent",
-             "Tuesday, June 30 - Sunday, July 5, 2026: Firefly!",
-             "Friday, July 24, 2026: Firefly documentation due",
+             "Tuesday, June 30 - Sunday, July 5, 2026: Luna Burn!",
+             "Friday, July 24, 2026: Luna Burn documentation due",
              "Friday, Aug 7, 2026: Second check cut and sent"]

@@ -1,7 +1,7 @@
 class UserMailer < ActionMailer::Base
   helper ApplicationHelper
 
-  default from: "grants@fireflyartscollective.org"
+  default from: "grants@lunaburn.org"
 
   # Subject can be set in your I18n file at config/locales/en.yml
   # with the following lookup:
@@ -12,7 +12,7 @@ class UserMailer < ActionMailer::Base
     @user = user
     @type = type
 
-    mail to: @user.email, subject: "Firefly Art Grant Account Activation"
+    mail to: @user.email, subject: "Luna Burn Art Grant Account Activation"
   end
 
   # Subject can be set in your I18n file at config/locales/en.yml
@@ -24,14 +24,14 @@ class UserMailer < ActionMailer::Base
     @user = user
     @type = type
 
-    mail to: @user.email, subject: "Firefly Art Grant Password Reset"
+    mail to: @user.email, subject: "Luna Burn Art Grant Password Reset"
   end
 
   def voter_verified(user, year)
     @user = user
     @year = year
 
-    mail to: @user.email, subject: "Firefly Art Grant Voter Account Verified"
+    mail to: @user.email, subject: "Luna Burn Art Grant Voter Account Verified"
   end
 
   def grant_funded(submission, artist, grant, year)
@@ -46,7 +46,7 @@ class UserMailer < ActionMailer::Base
       raise "ERROR loading email template_values for #{@grant.name}"
     end
 
-    mail to: @artist.email, cc: get_cc(), subject: "#{@year} Firefly #{@grant.name} Grant Decision: #{@submission.name}"
+    mail to: @artist.email, cc: get_cc(), subject: "#{@year} Luna Burn #{@grant.name} Grant Decision: #{@submission.name}"
   end
 
   def grant_not_funded(submission, artist, grant, year)
@@ -55,7 +55,7 @@ class UserMailer < ActionMailer::Base
     @grant = grant
     @year = year
 
-    mail to: @artist.email, cc: get_cc(), subject: "#{@year} Firefly #{@grant.name} Grant Decision: #{@submission.name}"
+    mail to: @artist.email, cc: get_cc(), subject: "#{@year} Luna Burn #{@grant.name} Grant Decision: #{@submission.name}"
   end
 
   def notify_questions(submission, artist, grant, year, due_date_val)
@@ -65,13 +65,13 @@ class UserMailer < ActionMailer::Base
     @year = year
     @due_date = "#{Date::DAYNAMES[due_date_val.wday]}, #{due_date_val.strftime("%B %-d, %Y")}"
 
-    mail to: @artist.email, cc: get_cc(), subject: "#{@year} Firefly #{@grant.name} Grants: Questions regarding #{@submission.name}"
+    mail to: @artist.email, cc: get_cc(), subject: "#{@year} Luna Burn #{@grant.name} Grants: Questions regarding #{@submission.name}"
   end
 
   private
   def get_cc()
     if Rails.env.production?
-      return "grants@fireflyartscollective.org"
+      return "grants@lunaburn.org"
     end
     return ""
   end
